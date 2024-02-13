@@ -1,0 +1,144 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template for Cover Letter
+%
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%
+% Authors:
+% Claud D. Park <posquit0.bj@gmail.com>
+% Lars Richter <mail@ayeks.de>
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+%
+
+
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
+% A4 paper size by default, use 'letterpaper' for US letter
+\documentclass[12pt, a4paper]{awesome-cv}
+
+% Configure page margins with geometry
+\geometry{left=1.5cm, top=2.5cm, right=1.5cm, bottom=2.5cm, footskip=.5cm}
+
+% Specify the location of the included fonts
+\fontdir[fonts/]
+
+% Color for highlights
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete, awesome-darknight
+\colorlet{awesome}{awesome-skyblue}
+% Uncomment if you would like to specify your own color
+% \definecolor{awesome}{HTML}{CA63A8}
+
+% Colors for text
+% Uncomment if you would like to specify your own color
+% \definecolor{darktext}{HTML}{414141}
+% \definecolor{text}{HTML}{333333}
+\definecolor{graytext}{HTML}{303030}
+% \definecolor{lighttext}{HTML}{999999}
+
+% Set false if you don't want to highlight section with awesome color
+\setbool{acvSectionColorHighlight}{true}
+
+% If you would like to change the social information separator from a pipe (|) to something else
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+
+%-------------------------------------------------------------------------------
+%	PERSONAL INFORMATION
+%	Comment any of the lines below if they are not required
+%-------------------------------------------------------------------------------
+% Available options: circle|rectangle,edge/noedge,left/right
+% \photo[circle,noedge,left]{profile}
+\name{Emilie}{Yu}
+\position{Engineering student}
+\address{8, Impasse du Petit Pont, 01390 Saint André de Corcy, France}
+
+% \mobile{(+33) 6 25 87 87 79}
+\email{emilie.yu@inria.fr}
+% \gitlab{gitlab-id}
+% \stackoverflow{SO-id}{SO-name}
+% \twitter{@twit}
+% \skype{skype-id}
+% \reddit{reddit-id}
+% \extrainfo{extra informations}
+
+
+
+
+%-------------------------------------------------------------------------------
+%	LETTER INFORMATION
+%	All of the below lines must be filled out
+%-------------------------------------------------------------------------------
+% The company being applied to
+\recipient
+  {}
+  {Unity, Copenhagen}
+% The date on the letter, default is the date of compilation
+\letterdate{\today}
+% The title of the letter
+\lettertitle{Job Application for UX Student Worker}
+% How the letter is opened
+\letteropening{To whom it may concern,}
+% How the letter is closed
+\letterclosing{Kind regards,}
+% Any enclosures with the letter
+%\letterenclosure[Attached]{Curriculum Vitae}
+
+
+%-------------------------------------------------------------------------------
+\begin{document}
+
+% Print the header with above personal informations
+% Give optional argument to change alignment(C: center, L: left, R: right)
+\makecvheader[R]
+
+% Print the footer with 3 arguments(<left>, <center>, <right>)
+% Leave any of these blank if they are not needed
+% \makecvfooter
+%   {\today}
+%   {Claud D. Park~~~·~~~Cover Letter}
+%   {}
+
+% Print the title with above letter informations
+% \makelettertitle
+
+%-------------------------------------------------------------------------------
+%	LETTER CONTENT
+%-------------------------------------------------------------------------------
+\begin{cvletter}
+
+% \lettersection{About Me}
+\vspace{20mm}
+To whom it may concern,
+
+I am writing to you to express my interest in your job offer for a UX student worker. As a future MSc student in Digital Media Engineering at DTU, I am looking for a student job in the field of computer science, starting in september 2018. I have always loved digital arts and will be furthering my studies in the domains of computer graphics and rendering, so searching for a job at Unity seemed like the obvious thing to do. I have experience in designing web UI both in personal and corporate projects, and a passion for programming and design, so this opening seems like the perfect opportunity for me.
+
+While studying for my bachelor of engineering in Centrale Paris, I was part of a team of students organizing a major event on campus – La Nuit des Troubadours, a festival with 1000+ participants and a budget of 42 000€. In this team I oversaw the communication on web medias, as well as the design of all communication material. While reinforcing my interest in design, I also discovered web development. I took on the challenge to study PHP and Symfony 3 through online courses in order to build a new website for La Nuit des Troubadours, featuring a responsive design and an administrator interface to edit the website without diving into source code. Doing all the steps of the process, from drawing the UI on a whiteboard to deploying the website was a really interesting experience, despite the very small scale of the project.
+After 2 years at Centrale Paris, I was an intern at Datawords where I helped maintain and develop a web platform used daily by major clients of the company. I worked with a team of 7 other developers and learnt to use new technologies such as Spring MVC, AngularJS and Angular 4. I was in charge of designing the UI for a new data visualization dashboard that had to be highly customizable by the end-user, and support diverse data. Working with 2 other developers, we built the service with a front-end in Angular 4 and deployed a prototype after a month. This new dashboard feature was used as an asset to sell the platform to clients in multiple demos.
+
+Working at Unity really fits my personal goal of combining technology and artistic creation in my future job, that’s why I would be thrilled to join the team as a student worker. While not familiar with Unity, I have used extensively other digital creation applications such as Adobe Photoshop, Premiere Pro and After Effect, and played around with Autodesk Maya and Blender. I’ve always been fascinated by how technology can enable creation, and even boost it. I don’t have much experience in UX design yet – being more on the developer side previously – so I'm eager to learn as much as possible on the subject.
+
+I would love to know more about this position, especially what tasks are in its scope. As an engineering student, I would happily work on some development tasks as well if needed.
+
+
+% \lettersection{About Me}
+% Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper neque sit amet lectus facilisis sed luctus nisl iaculis. Vivamus at neque arcu, sed tempor quam. Curabitur pharetra tincidunt tincidunt. Morbi volutpat feugiat mauris, quis tempor neque vehicula volutpat. Duis tristique justo vel massa fermentum accumsan. Mauris ante elit, feugiat vestibulum tempor eget, eleifend ac ipsum. Donec scelerisque lobortis ipsum eu vestibulum. Pellentesque vel massa at felis accumsan rhoncus.
+
+% \lettersection{Why Google?}
+% Suspendisse commodo, massa eu congue tincidunt, elit mauris pellentesque orci, cursus tempor odio nisl euismod augue. Aliquam adipiscing nibh ut odio sodales et pulvinar tortor laoreet. Mauris a accumsan ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse vulputate sem vehicula ipsum varius nec tempus dui dapibus. Phasellus et est urna, ut auctor erat. Sed tincidunt odio id odio aliquam mattis. Donec sapien nulla, feugiat eget adipiscing sit amet, lacinia ut dolor. Phasellus tincidunt, leo a fringilla consectetur, felis diam aliquam urna, vitae aliquet lectus orci nec velit. Vivamus dapibus varius blandit.
+
+% \lettersection{Why Me?}
+% Duis sit amet magna ante, at sodales diam. Aenean consectetur porta risus et sagittis. Ut interdum, enim varius pellentesque tincidunt, magna libero sodales tortor, ut fermentum nunc metus a ante. Vivamus odio leo, tincidunt eu luctus ut, sollicitudin sit amet metus. Nunc sed orci lectus. Ut sodales magna sed velit volutpat sit amet pulvinar diam venenatis.
+
+\end{cvletter}
+
+
+%-------------------------------------------------------------------------------
+% Print the signature and enclosures with above letter informations
+\makeletterclosing
+
+\end{document}
