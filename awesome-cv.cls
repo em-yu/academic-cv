@@ -379,6 +379,8 @@
 \newcommand{\acvHeaderAfterSocialSkip}{-5mm}
 \newcommand{\acvHeaderAfterQuoteSkip}{2mm}
 
+\newcommand{\linespacing}{0.8}
+
 % Others
 \newcommand{\acvSectionTopSkip}{3mm}
 \newcommand{\acvSectionContentTopSkip}{2.5mm}
@@ -568,19 +570,24 @@
 }
 % Define an entry of cv information
 % Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
-\newcommand*{\cventry}[3]{%
-  \vspace{-2.0mm}
+\newcommand*{\cventry}[4][]{%
+  \vspace{-1.5mm}
   % \setlength{\parskip}{0pt}
   \setlength{\baselineskip}{0pt}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
     % \ifempty{#2#3}
-  \entrytitlestyle{#1} & \entrydatestyle{#2} \\
-  % {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
-  % \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
-    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#3}}
+    \entrytitlestyle{#2}
+    \ifthenelse{\equal{#1}{}}{}{\href{#1}{\descriptionstyle{\strut\acvHeaderIconSep\faExternalLink}}} % webpage
+    & \entrydatestyle{#3}
   \end{tabular*}%
+  \vspace{-2mm}
+  \begin{justify}
+    \setstretch{\linespacing}
+    \descriptionstyle{#4}
+  \end{justify}
+  \filbreak
 }
 
 % Define an environment for cvsubentry
@@ -640,43 +647,37 @@
 % Define a line of cv information(skill)
 % Usage: \cvskill{<type>}{<skillset>}
 \newcommand*{\cvskill}[2]{%
+  \setstretch{\linespacing}
 	\skilltypestyle{#1} & \skillsetstyle{#2} \\
 }
 
 % Define an environment for cvpub
 \newenvironment{cvpubs}{%
   \vspace{\acvSectionContentTopSkip}
+  \vspace{-2.0mm}
   \begin{center}
 }{%
   \end{center}
 }
 % Define a line of cv information(publication)
 % Usage: \cvpub{<title>}{<authors>}{<conference>}
-\newcommand*{\cvpub}[3]{%
-  \vspace{-2.0mm}
-  \setlength\tabcolsep{0pt}
-  \setlength{\extrarowheight}{0pt}
-  % \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
-\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth} R{0cm}}
-    % \ifempty{#2#3}
-\multicolumn{2}{L{\textwidth}}{\entrytitlestyle{#1}} \\
-\multicolumn{2}{L{\textwidth}}{\descriptionstyle{#2}} \\
-\multicolumn{2}{L{\textwidth}}{\descriptionstyle{#3}}
-  \end{tabular*}%
-}
-
-
-% Define a line of cv information(publication)
-% Usage: \cvpub{<title>}{<authors>}{<conference>}
-\newcommand*{\cvtalkseries}[2]{%
-  \vspace{-2.0mm}
-\raggedright\entrytitlestyle{#1}
-{#2}
+\newcommand*{\cvpub}[6]{%
+  \begin{justify}
+    \setstretch{\linespacing}
+    \entrytitlestyle{#1} \\
+    \descriptionstyle{#2} \\
+    \descriptionstyle{#3}
+    \ifthenelse{\equal{#4#5#6}{}}{}{\\} % Add line break if any of #4, #5, or #6 is not empty
+    \ifthenelse{\equal{#4}{}}{}{\href{#4}{\descriptionstyle{\strut\faExternalLink\acvHeaderIconSep webpage \acvHeaderIconSep }}} % webpage
+    \ifthenelse{\equal{#5}{}}{}{\href{#5}{\descriptionstyle{\strut\faFileTextO\acvHeaderIconSep paper \acvHeaderIconSep }}} % paper
+    \ifthenelse{\equal{#6}{}}{}{\href{#6}{\descriptionstyle{\strut\faCode\acvHeaderIconSep code \acvHeaderIconSep }}} % code
+  \end{justify}
 }
 
 % Define an environment for cventry
 \newenvironment{cvtalks}{%
-  \vspace{-3.0mm}
+  \vspace{\acvSectionContentTopSkip}
+  \vspace{-2.0mm}
   \begin{justify}
     % \setlength{\itemindent}{0em} 
   % \renewcommand{\itemindent}[0em]{\itemindent}
@@ -698,8 +699,19 @@
   \vspace{-2.5mm}
 }
 
+
 % Define a line of cv information(publication)
 % Usage: \cvpub{<title>}{<authors>}{<conference>}
+\newcommand*{\cvtalkseries}[2]{%
+\vspace{-2.0mm}
+\raggedright\entrytitlestyle{#1}
+\vspace{-3.0mm}
+
+{#2}
+}
+
+% Define a line of cv information(talk)
+% Usage: \cvtalk{<title>}{<location>}{<date>}
 \newcommand*{\cvtalk}[3]{%
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
@@ -707,7 +719,7 @@
     % \ifempty{#2#3}
   \descriptionstyle{#1} & \entrylocationstyle{#2} -- \entrydatestyle{#3} \\
   \end{tabular*}%
-  \vspace{-1.5mm}
+  \vspace{-1mm}
 }
 
 
